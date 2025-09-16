@@ -5,13 +5,12 @@
 
 int main() {
   char *line = NULL;
-  size_t len = 0;
+  size_t len = 1000;
   getline(&line, &len, stdin);
   char *saveptr = NULL;
   char *token = strtok_r(line, " ", &saveptr);
-  while (token != NULL) {
-    printf("%s\n", token);
-    token = strtok_r(NULL, " ", &saveptr);
-  }
+
+  printf("%s", token);
+
   free(line);
 }

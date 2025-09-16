@@ -10,8 +10,8 @@ int main() {
   char *saveptr = NULL;
   char *token = strtok_r(line, " ", &saveptr);
   while (token != NULL) {
-    printf("%s\n", token);
-    token = strtok_r(NULL, " ", &saveptr);
+    printf("%s", token);
+    token = strtok_r(line, " ", &saveptr);
   }
   free(line);
 }
