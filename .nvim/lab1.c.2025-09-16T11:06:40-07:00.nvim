@@ -1,0 +1,7 @@
+#define
+#include <stdio.h>
+
+int main() {
+  char *buffer = getline();
+  printf("%s", buffer);
+}

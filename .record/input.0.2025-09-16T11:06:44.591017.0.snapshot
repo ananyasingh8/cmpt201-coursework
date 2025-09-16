@@ -1,0 +1,11 @@
+{"version": 2, "width": 208, "height": 52, "timestamp": 1758046004, "idle_time_limit": 5.0, "env": {"SHELL": "/usr/bin/zsh", "TERM": "xterm-256color"}}
+[0.095998, "o", "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                               \r \r"]
+[0.096389, "o", "\u001b]2;cmpt201@8ce5291f1b3f:~/cmpt201-coursework\u0007\u001b]1;..01-coursework\u0007"]
+[0.09728, "o", "\u001b]7;file://8ce5291f1b3f/home/cmpt201/cmpt201-coursework\u001b\\"]
+[0.106013, "o", "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[35m[recording] \u001b[34m~/cmpt201-coursework\u001b[32m❯\u001b[39m \u001b[K\u001b[?1h\u001b=\u001b[?2004h"]
+[4.218823, "i", "c"]
+[4.222853, "o", "c"]
+[4.226222, "o", "\b\u001b[1m\u001b[31mc\u001b[0m\u001b[39m"]
+[4.227166, "o", "\b\u001b[1m\u001b[31mc\u001b[0m\u001b[39m\u001b[92mlear\u001b[39m\b\b\b\b"]
+[4.396424, "i", "d"]
+[4.399191, "o", "\b\u001b[1m\u001b[31mc\u001b[1m\u001b[31md\u001b[0m\u001b[39m\u001b[39m \u001b[39m \u001b[39m \b\b\b"]
