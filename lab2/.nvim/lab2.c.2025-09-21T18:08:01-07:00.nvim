@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main() {
+  char* user_input = getline();
+  printf("%s", user_input);
+
+  free(user_input);
+}

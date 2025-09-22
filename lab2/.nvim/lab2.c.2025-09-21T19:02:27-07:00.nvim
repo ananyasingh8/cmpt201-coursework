@@ -1,0 +1,603 @@
+.
+  -mmark-bti-property     Add .note.gnu.property with BTI to assembly files (AArch64 only)
+  -MMD                    Write a depfile containing user headers
+  -mmemops                Enable generation of memop instructions
+  -mmlir <value>          Additional arguments to forward to MLIR's option processing
+  -mms-bitfields          Set the default structure layout to be compatible with the Microsoft compiler standard
+  -mmsa                   Enable MSA ASE (MIPS only)
+  -mmt                    Enable MT ASE (MIPS only)
+  -MM                     Like -MMD, but also implies -E and writes to stdout by default
+  -mno-abicalls           Disable SVR4-style position-independent code (Mips only)
+  -mno-apx-features=<value>
+                          Disable features of APX
+  -mno-bti-at-return-twice
+                          Do not add a BTI instruction after a setjmp or other return-twice construct (Arm/AArch64 only)
+  -mno-crc                Disallow use of CRC instructions (Mips only)
+  -mno-cumode             Specify WGP wavefront execution mode (AMDGPU only)
+  -mno-embedded-data      Do not place constants in the .rodata section instead of the .sdata if they meet the -G <size> threshold (MIPS)
+  -mno-execute-only       Allow generation of data access to code sections (ARM only)
+  -mno-extern-sdata       Do not assume that externally defined data is in the small data if it meets the -G <size> threshold (MIPS)
+  -mno-fix-cmse-cve-2021-35465
+                          Don't work around VLLDM erratum CVE-2021-35465 (ARM only)
+  -mno-fix-cortex-a53-835769
+                          Don't workaround Cortex-A53 erratum 835769 (AArch64 only)
+  -mno-fix-cortex-a57-aes-1742098
+                          Don't work around Cortex-A57 Erratum 1742098 (ARM only)
+  -mno-fix-cortex-a72-aes-1655431
+                          Don't work around Cortex-A72 Erratum 1655431 (ARM only)
+  -mno-fmv                Disable function multiversioning
+  -mno-gather             Disable generation of gather instructions in auto-vectorization(x86 only)
+  -mno-global-merge       Disable merging of globals
+  -mno-gpopt              Do not use GP relative accesses for symbols known to be in a small data section (MIPS)
+  -mno-hvx-ieee-fp        Disable Hexagon HVX IEEE floating-point
+  -mno-hvx-qfloat         Disable Hexagon HVX QFloat instructions
+  -mno-hvx                Disable Hexagon Vector eXtensions
+  -mno-implicit-float     Don't generate implicit floating point or vector instructions
+  -mno-incremental-linker-compatible
+                          (integrated-as) Emit an object file which cannot be used with an incremental linker
+  -mno-lasx               Disable Loongson Advanced SIMD Extension (LASX).
+  -mno-local-sdata        Do not extend the -G behaviour to object local data (MIPS)
+  -mno-long-calls         Restore the default behaviour of not generating long calls
+  -mno-lsx                Disable Loongson SIMD Extension (LSX).
+  -mno-lvi-cfi            Disable control-flow mitigations for Load Value Injection (LVI)
+  -mno-lvi-hardening      Disable mitigations for Load Value Injection (LVI)
+  -mno-madd4              Disable the generation of 4-operand madd.s, madd.d and related instructions.
+  -mno-memops             Disable generation of memop instructions
+  -mno-movt               Disallow use of movt/movw pairs (ARM only)
+  -mno-ms-bitfields       Do not set the default structure layout to be compatible with the Microsoft compiler standard
+  -mno-msa                Disable MSA ASE (MIPS only)
+  -mno-mt                 Disable MT ASE (MIPS only)
+  -mno-neg-immediates     Disallow converting instructions with negative immediates to their negation or inversion.
+  -mno-nvj                Disable generation of new-value jumps
+  -mno-nvs                Disable generation of new-value stores
+  -mno-outline-atomics    Don't generate local calls to out-of-line atomic operations
+  -mno-outline            Disable function outlining (AArch64 only)
+  -mno-packets            Disable generation of instruction packets
+  -mno-pic-data-is-text-relative
+                          Don't assume data segments are relative to text segment
+  -mno-regnames           Use only register numbers when writing assembly output
+  -mno-relax              Disable linker relaxation
+  -mno-restrict-it        Allow generation of complex IT blocks.
+  -mno-save-restore       Disable using library calls for save and restore
+  -mno-scatter            Disable generation of scatter instructions in auto-vectorization(x86 only)
+  -mno-seses              Disable speculative execution side effect suppression (SESES)
+  -mno-stack-arg-probe    Disable stack probes which are enabled by default
+  -mno-tgsplit            Disable threadgroup split execution mode (AMDGPU only)
+  -mno-tls-direct-seg-refs
+                          Disable direct TLS access through segment registers
+  -mno-unaligned-access   Force all memory accesses to be aligned (AArch32/AArch64/LoongArch/RISC-V only)
+  -mno-wavefrontsize64    Specify wavefront size 32 mode (AMDGPU only)
+  -mnocrc                 Disallow use of CRC instructions (ARM only)
+  -mnop-mcount            Generate mcount/__fentry__ calls as nops. To activate they need to be patched in.
+  -mnvj                   Enable generation of new-value jumps
+  -mnvs                   Enable generation of new-value stores
+  -module-dependency-dir <value>
+                          Directory to dump module dependencies to
+  -module-file-info       Provide information about a particular module file
+  -momit-leaf-frame-pointer
+                          Omit frame pointer setup for leaf functions
+  -moutline-atomics       Generate local calls to out-of-line atomic operations
+  -moutline               Enable function outlining (AArch64 only)
+  -mpacked-stack          Use packed stack layout (SystemZ only).
+  -mpackets               Enable generation of instruction packets
+  -mpad-max-prefix-size=<value>
+                          Specify maximum number of prefixes to use for padding
+  -mpic-data-is-text-relative
+                          Assume data segments are relative to text segment
+  -mprefer-vector-width=<value>
+                          Specifies preferred vector width for auto-vectorization. Defaults to 'none' which allows target specific decisions.
+  -mprintf-kind=<value>   Specify the printf lowering scheme (AMDGPU only), allowed values are "hostcall"(printing happens during kernel execution, this scheme relies on hostcalls which require system to support pcie atomics) and "buffered"(printing happens after all kernel threads exit, this uses a printf buffer and does not rely on pcie atomic support)
+  -MP                     Create phony target for each dependency (other than main file)
+  -mqdsp6-compat          Enable hexagon-qdsp6 backward compatibility
+  -MQ <value>             Specify name of main file output to quote in depfile
+  -mrecip=<value>         Control use of approximate reciprocal and reciprocal square root instructions followed by <n> iterations of Newton-Raphson refinement. <value> = ( ['!'] ['vec-'] ('rcp'|'sqrt') [('h'|'s'|'d')] [':'<n>] ) | 'all' | 'default' | 'none'
+  -mrecip                 Equivalent to '-mrecip=all'
+  -mrecord-mcount         Generate a __mcount_loc section entry for each __fentry__ call.
+  -mregnames              Use full register names when writing assembly output
+  -mrelax-all             (integrated-as) Relax all machine instructions
+  -mrelax                 Enable linker relaxation
+  -mrestrict-it           Disallow generation of complex IT blocks. It is off by default.
+  -mrtd                   Make StdCall calling convention the default
+  -mrvv-vector-bits=<value>
+                          Specify the size in bits of an RVV vector register
+  -msave-restore          Enable using library calls for save and restore
+  -mseses                 Enable speculative execution side effect suppression (SESES). Includes LVI control flow integrity mitigations
+  -msign-return-address=<value>
+                          Select return address signing scope
+  -mskip-rax-setup        Skip setting up RAX register when passing variable arguments (x86 only)
+  -msmall-data-limit=<value>
+                          Put global and static data smaller than the limit into a special section
+  -msoft-float            Use software floating point
+  -mstack-alignment=<value>
+                          Set the stack alignment
+  -mstack-arg-probe       Enable stack probes
+  -mstack-probe-size=<value>
+                          Set the stack probe size
+  -mstack-protector-guard-offset=<value>
+                          Use the given offset for addressing the stack-protector guard
+  -mstack-protector-guard-reg=<value>
+                          Use the given reg for addressing the stack-protector guard
+  -mstack-protector-guard-symbol=<value>
+                          Use the given symbol for addressing the stack-protector guard
+  -mstack-protector-guard=<value>
+                          Use the given guard (global, tls) for addressing the stack-protector guard
+  -mstackrealign          Force realign the stack at entry to every function
+  -msve-vector-bits=<value>
+                          Specify the size in bits of an SVE vector register. Defaults to the vector length agnostic value of "scalable". (AArch64 only)
+  -msvr4-struct-return    Return small structs in registers (PPC32 only)
+  -mtargetos=<value>      Set the deployment target to be the specified OS and OS version
+  -mtgsplit               Enable threadgroup split execution mode (AMDGPU only)
+  -mthread-model <value>  The thread model to use. Defaults to 'posix')
+  -mtls-dialect=<value>   Which thread-local storage dialect to use for dynamic accesses of TLS variables
+  -mtls-direct-seg-refs   Enable direct TLS access through segment registers (default)
+  -mtls-size=<value>      Specify bit size of immediate TLS offsets (AArch64 ELF only): 12 (for 4KB) | 24 (for 16MB, default) | 32 (for 4GB) | 48 (for 256TB, needs -mcmodel=large)
+  -mtp=<value>            Thread pointer access method. For AArch32: 'soft' uses a function call, or 'tpidrurw', 'tpidruro' or 'tpidrprw' use the three CP15 registers. 'cp15' is an alias for 'tpidruro'. For AArch64: 'tpidr_el0', 'tpidr_el1', 'tpidr_el2', 'tpidr_el3' or 'tpidrro_el0' use the five system registers. 'elN' is an alias for 'tpidr_elN'.
+  -mtune=<value>          Only supported on AArch64, PowerPC, RISC-V, SPARC, SystemZ, and X86
+  -MT <value>             Specify name of main file output in depfile
+  -munaligned-access      Allow memory accesses to be unaligned (AArch32/AArch64/LoongArch/RISC-V only)
+  -munsafe-fp-atomics     Enable generation of unsafe floating point atomic instructions. May generate more efficient code, but may not respect rounding and denormal modes, and may give incorrect results for certain memory destinations. (AMDGPU only)
+  -mvevpu                 Emit VPU instructions for VE
+  -MV                     Use NMake/Jom format for the depfile
+  -mwavefrontsize64       Specify wavefront size 64 mode (AMDGPU only)
+  -mxcoff-build-id=<0xHEXSTRING>
+                          On AIX, request creation of a build-id string, "0xHEXSTRING", in the string table of the loader section inside the linked binary
+  -mxcoff-roptr           Place constant objects with relocatable address values in the RO data section and add -bforceimprw to the linker flags (AIX only)
+  -mzos-hlq-clang=<ClangHLQ>
+                          High level qualifier for z/OS C++RT side deck datasets
+  -mzos-hlq-csslib=<CsslibHLQ>
+                          High level qualifier for z/OS CSSLIB dataset
+  -mzos-hlq-le=<LeHLQ>    High level qualifier for z/OS Language Environment datasets
+  -mzos-sys-include=<SysInclude>
+                          Path to system headers on z/OS
+  -M                      Like -MD, but also implies -E and writes to stdout by default
+  --no-cuda-include-ptx=<value>
+                          Do not include PTX for the following GPU architecture (e.g. sm_35) or 'all'. May be specified more than once.
+  --no-cuda-version-check Don't error out if the detected version of the CUDA install is too low for the requested CUDA gpu architecture.
+  --no-default-config     Disable loading default configuration files
+  --no-gpu-bundle-output  Do not bundle output files of HIP device compilation
+  -no-hip-rt              Do not link against HIP runtime libraries
+  --no-offload-arch=<value>
+                          Remove CUDA/HIP offloading device architecture (e.g. sm_35, gfx906) from the list of devices to compile for. 'all' resets the list to its default value.
+  --no-offload-new-driver Don't Use the new driver for offloading compilation.
+  --no-system-header-prefix=<prefix>
+                          Treat all #include paths starting with <prefix> as not including a system header.
+  -nobuiltininc           Disable builtin #include directories
+  -nogpuinc               Do not add include paths for CUDA/HIP and do not include the default CUDA/HIP wrapper headers
+  -nogpulib               Do not link device library for CUDA/HIP device compilation
+  -nohipwrapperinc        Do not include the default HIP wrapper headers and include paths
+  -nostdinc++             Disable standard #include directories for the C++ standard library
+  --nvptx-arch-tool=<value>
+                          Tool used for detecting NVIDIA GPU arch in the system.
+  -ObjC++                 Treat source input files as Objective-C++ inputs
+  -objcmt-allowlist-dir-path=<value>
+                          Only modify files with a filename contained in the provided directory path
+  -objcmt-atomic-property Make migration to 'atomic' properties
+  -objcmt-migrate-all     Enable migration to modern ObjC
+  -objcmt-migrate-annotation
+                          Enable migration to property and method annotations
+  -objcmt-migrate-designated-init
+                          Enable migration to infer NS_DESIGNATED_INITIALIZER for initializer methods
+  -objcmt-migrate-instancetype
+                          Enable migration to infer instancetype for method result type
+  -objcmt-migrate-literals
+                          Enable migration to modern ObjC literals
+  -objcmt-migrate-ns-macros
+                          Enable migration to NS_ENUM/NS_OPTIONS macros
+  -objcmt-migrate-property-dot-syntax
+                          Enable migration of setter/getter messages to property-dot syntax
+  -objcmt-migrate-property
+                          Enable migration to modern ObjC property
+  -objcmt-migrate-protocol-conformance
+                          Enable migration to add protocol conformance on classes
+  -objcmt-migrate-readonly-property
+                          Enable migration to modern ObjC readonly property
+  -objcmt-migrate-readwrite-property
+                          Enable migration to modern ObjC readwrite property
+  -objcmt-migrate-subscripting
+                          Enable migration to modern ObjC subscripting
+  -objcmt-ns-nonatomic-iosonly
+                          Enable migration to use NS_NONATOMIC_IOSONLY macro for setting property's 'atomic' attribute
+  -objcmt-returns-innerpointer-property
+                          Enable migration to annotate property with NS_RETURNS_INNER_POINTER
+  -objcmt-whitelist-dir-path=<value>
+                          Alias for -objcmt-allowlist-dir-path
+  -ObjC                   Treat source input files as Objective-C inputs
+  -object-file-name=<file>
+                          Set the output <file> for debug infos
+  --offload-arch=<value>  Specify an offloading device architecture for CUDA, HIP, or OpenMP. (e.g. sm_35). If 'native' is used the compiler will detect locally installed architectures. For HIP offloading, the device architecture can be followed by target ID features delimited by a colon (e.g. gfx908:xnack+:sramecc-). May be specified more than once.
+  --offload-compress      Compress offload device binaries (HIP only)
+  --offload-device-only   Only compile for the offloading device.
+  --offload-host-device   Compile for both the offloading host and device (default).
+  --offload-host-only     Only compile for the offloading host.
+  --offload-link          Use the new offloading linker to perform the link job.
+  --offload-new-driver    Use the new driver for offloading compilation.
+  --offload=<value>       Specify comma-separated list of offloading target triples (CUDA and HIP only)
+  -o <file>               Write output to <file>
+  -pedantic               Warn on language extensions
+  -pg                     Enable mcount instrumentation
+  -pipe                   Use pipes between commands, when possible
+  --precompile            Only precompile the input
+  -print-diagnostic-options
+                          Print all of Clang's warning options
+  -print-effective-triple Print the effective target triple
+  -print-file-name=<file> Print the full library path of <file>
+  -print-ivar-layout      Enable Objective-C Ivar layout bitmap print trace
+  -print-libgcc-file-name Print the library path for the currently used compiler runtime library ("libgcc.a" or "libclang_rt.builtins.*.a")
+  -print-multi-flags-experimental
+                          Print the flags used for selecting multilibs (experimental)
+  -print-prog-name=<name> Print the full program path of <name>
+  -print-resource-dir     Print the resource directory pathname
+  -print-rocm-search-dirs Print the paths used for finding ROCm installation
+  -print-runtime-dir      Print the directory pathname containing clangs runtime libraries
+  -print-search-dirs      Print the paths used for finding libraries and programs
+  -print-supported-cpus   Print supported cpu models for the given target (if target is not specified, it will print the supported cpus for the default target)
+  -print-supported-extensions
+                          Print supported -march extensions (RISC-V, AArch64 and ARM only)
+  -print-target-triple    Print the normalized target triple
+  -print-targets          Print the registered targets
+  -pthread                Support POSIX threads in generated code
+  --ptxas-path=<value>    Path to ptxas (used for compiling CUDA code)
+  -P                      Disable linemarker output in -E mode
+  -p                      Enable mcount instrumentation with prof
+  -Qn                     Do not emit metadata containing compiler name and version
+  -Qunused-arguments      Don't emit warning for unused driver arguments
+  -Qy                     Emit metadata containing compiler name and version
+  -regcall4               Set __regcall4 as a default calling convention to respect __regcall ABI v.4
+  -relocatable-pch        Whether to build a relocatable precompiled header
+  -rewrite-legacy-objc    Rewrite Legacy Objective-C source to C++
+  -rewrite-objc           Rewrite Objective-C source to C++
+  --rocm-device-lib-path=<value>
+                          ROCm device library path. Alternative to rocm-path.
+  --rocm-path=<value>     ROCm installation path, used for finding and automatically linking required bitcode libraries.
+  -Rpass-analysis=<value> Report transformation analysis from optimization passes whose name matches the given POSIX regular expression
+  -Rpass-missed=<value>   Report missed transformations by optimization passes whose name matches the given POSIX regular expression
+  -Rpass=<value>          Report transformations performed by optimization passes whose name matches the given POSIX regular expression
+  -rtlib=<value>          Compiler runtime library to use
+  -R<remark>              Enable the specified remark
+  -save-stats=<value>     Save llvm statistics.
+  -save-stats             Save llvm statistics.
+  -save-temps=<value>     Save intermediate compilation results.
+  -save-temps             Save intermediate compilation results
+  -serialize-diagnostics <value>
+                          Serialize compiler diagnostics to a file
+  -shared-libsan          Dynamically link the sanitizer runtime
+  --start-no-unused-arguments
+                          Don't emit warnings about unused arguments for the following arguments
+  -static-libsan          Statically link the sanitizer runtime (Not supported for ASan, TSan or UBSan on darwin)
+  -static-openmp          Use the static host OpenMP runtime while linking.
+  -std=<value>            Language standard to compile for
+  -stdlib++-isystem <directory>
+                          Use directory as the C++ standard library include path
+  -stdlib=<value>         C++ standard library to use
+  -sycl-std=<value>       SYCL language standard to compile for.
+  --system-header-prefix=<prefix>
+                          Treat all #include paths starting with <prefix> as including a system header.
+  -S                      Only run preprocess and compilation steps
+  --target=<value>        Generate code for the given target
+  -time                   Time individual commands
+  -traditional-cpp        Enable some traditional CPP emulation
+  -trigraphs              Process trigraph sequences
+  -T <script>             Specify <script> as linker script
+  -undef                  undef all system defines
+  -unwindlib=<value>      Unwind library to use
+  -U <macro>              Undefine macro <macro>
+  --verify-debug-info     Verify the binary representation of debug output
+  -verify-pch             Load and verify that a pre-compiled header file is not stale
+  --version               Print version information
+  -vfsoverlay <value>     Overlay the virtual filesystem described by file over the real file system. Additionally, pass this overlay file to the linker if it supports it
+  -v                      Show commands to run and use verbose output
+  -Wa,<arg>               Pass the comma separated arguments in <arg> to the assembler
+  -Wdeprecated            Enable warnings for deprecated constructs and define __DEPRECATED
+  -Wl,<arg>               Pass the comma separated arguments in <arg> to the linker
+  -working-directory <value>
+                          Resolve file paths relative to the specified directory
+  -Wp,<arg>               Pass the comma separated arguments in <arg> to the preprocessor
+  -W<warning>             Enable the specified warning
+  -w                      Suppress all warnings
+  -Xanalyzer <arg>        Pass <arg> to the static analyzer
+  -Xarch_device <arg>     Pass <arg> to the CUDA/HIP device compilation
+  -Xarch_host <arg>       Pass <arg> to the CUDA/HIP host compilation
+  -Xassembler <arg>       Pass <arg> to the assembler
+  -Xclang=<arg>           Alias for -Xclang
+  -Xclang <arg>           Pass <arg> to clang -cc1
+  -Xcuda-fatbinary <arg>  Pass <arg> to fatbinary invocation
+  -Xcuda-ptxas <arg>      Pass <arg> to the ptxas assembler
+  -Xlinker <arg>          Pass <arg> to the linker
+  -Xoffload-linker<triple> <arg>
+                          Pass <arg> to the offload linkers or the ones idenfied by -<triple>
+  -Xopenmp-target=<triple> <arg>
+                          Pass <arg> to the target offloading toolchain identified by <triple>.
+  -Xopenmp-target <arg>   Pass <arg> to the target offloading toolchain.
+  -Xpreprocessor <arg>    Pass <arg> to the preprocessor
+  -x <language>           Treat subsequent input files as having type <language>
+  -z <arg>                Pass -z <arg> to the linker
+
+dxc compatibility options:
+  --dxv-path=<value>  DXIL validator installation path
+  -fspv-target-env=<value>
+                      Specify the target environment
+  -hlsl-entry <value> Entry point name for hlsl
+~/units/02-tools/a3-ananyasingh8❯ record
+Recording started.
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mkdir hello
+[recording] ~/units/02-tools/a3-ananyasingh8❯ nvim main.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mkdir task1
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mv main.c task1/
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mv other.c task1/
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  main.o  other.h  other.o  README.md  task1  test  test.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mv main.o task1
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mv other.h task1
+[recording] ~/units/02-tools/a3-ananyasingh8❯ mv other.o task1
+[recording] ~/units/02-tools/a3-ananyasingh8❯ l
+total 15M
+drwxr-xr-x 8 cmpt201 cmpt201 4.0K Sep 19 01:57 .
+drwxr-xr-x 1 cmpt201 cmpt201 4.0K Sep 19 01:24 ..
+-rwxr-xr-x 1 cmpt201 cmpt201 7.2M Sep 19 01:24 a3-checker.amd64
+-rwxr-xr-x 1 cmpt201 cmpt201 6.9M Sep 19 01:24 a3-checker.arm64
+-rwxr-xr-x 1 cmpt201 cmpt201  70K Sep 19 01:50 a.out
+drwxr-xr-x 8 cmpt201 cmpt201 4.0K Sep 19 01:51 .git
+drwxr-xr-x 3 cmpt201 cmpt201 4.0K Sep 19 01:24 .github
+drwxr-xr-x 2 cmpt201 cmpt201 4.0K Sep 19 01:55 hello
+drwxr-xr-x 2 cmpt201 cmpt201 4.0K Sep 19 01:56 .nvim
+-rw-r--r-- 1 cmpt201 cmpt201  23K Sep 19 01:24 README.md
+drwxr-xr-x 2 cmpt201 cmpt201 4.0K Sep 19 01:57 .record
+drwxr-xr-x 2 cmpt201 cmpt201 4.0K Sep 19 01:57 task1
+-rwxr-xr-x 1 cmpt201 cmpt201  69K Sep 19 01:40 test
+-rw-r--r-- 1 cmpt201 cmpt201   62 Sep 19 01:39 test.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  README.md  task1  test  test.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ nvim main.c
+\%
+[recording] ~/units/02-tools/a3-ananyasingh8❯ cd hello
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ nvim hello.c
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ nvim hello.h
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ nvim hello.
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ nvim hello.h
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ rm hello.h
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ mv hello. hello.h
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ ls
+hello.c  hello.h
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ nvim hello.c
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ cd ..
+[recording] ~/units/02-tools/a3-ananyasingh8❯ nvim main.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ nvim main.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ cd hello
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ clang -c hello.c
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ ls
+hello.c  hello.h  hello.o
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ ar -r libhello.a hello.o
+ar: creating libhello.a
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ ls
+hello.c  hello.h  hello.o  libhello.a
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ cd ..
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -c main.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  main.c  main.o  README.md  task1  test  test.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -o main main.c hello/libhello.a
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  main  main.c  main.o  README.md  task1  test  test.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ls -a
+.   a3-checker.amd64  a.out  .github  main    main.o  README.md  task1  test.c
+..  a3-checker.arm64  .git   hello    main.c  .nvim   .record    test
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ./main
+Hello World!%
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -lhelloa
+/usr/bin/ld: cannot find -lhelloa: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -lhello
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  main  main.c  main.o  README.md  task1  test  test.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ./main
+Hello World!%
+[recording] ~/units/02-tools/a3-ananyasingh8❯ cd ..
+[recording] ~/units/02-tools❯ cd a3-ananyasingh8/hello
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ clang -shared -fpic -o libhello.so hello.o
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ ls
+hello.c  hello.h  hello.o  libhello.a  libhello.so
+[recording] ~/units/02-tools/a3-ananyasingh8/hello❯ cd ..
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -lhello
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -llibhello.so
+/usr/bin/ld: cannot find -llibhello.so: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -l libhello.so
+/usr/bin/ld: cannot find -llibhello.so: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -l libhello
+/usr/bin/ld: cannot find -llibhello: No such file or directory
+/usr/bin/ld: note to link with ./hello/libhello.a use -l:libhello.a or rename it to liblibhello.a
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -lhello.so
+/usr/bin/ld: cannot find -lhello.so: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -L./hello -o main main.c -lhello
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ./main
+./main: error while loading shared libraries: libhello.so: cannot open shared object file: No such file or directory
+[recording] ~/units/02-tools/a3-ananyasingh8❯ LD_LIBRARY_PATH=./hello ./main
+Hello World!%
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -rpath /home/cmpt201/units/02-intro/a3-ananyasingh8/hello -lhello -L./hello -o main main.c
+\%
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ./main
+./main: error while loading shared libraries: libhello.so: cannot open shared object file: No such file or directory
+[recording] ~/units/02-tools/a3-ananyasingh8❯ clang -rpath /home/cmpt201/units/02-tools/a3-ananyasingh8/hello -lhello -L/home/cmpt201/units/02-tools/a3-ananyasingh8/hello -o main main.c
+[recording] ~/units/02-tools/a3-ananyasingh8❯ ./main
+Hello World!%
+[recording] ~/units/02-tools/a3-ananyasingh8❯ exit
+Recording done.
+~/units/02-tools/a3-ananyasingh8❯ ./a3-checker.arm64
+other.c does not exist.
+other.h does not exist.
+other.o does not exist.
+Checker completed. Make sure to check all error messages. No additional output indicates all basic checks have passed.
+~/units/02-tools/a3-ananyasingh8❯ cd ..
+~/units/02-tools❯ cd a3-ananyasingh8/task1
+~/units/02-tools/a3-ananyasingh8/task1❯ mv other.c ../
+~/units/02-tools/a3-ananyasingh8/task1❯ ls
+main.c  main.o  other.h  other.o
+~/units/02-tools/a3-ananyasingh8/task1❯ cd ..
+~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  main  main.c  main.o  other.c  README.md  task1  test  test.c
+~/units/02-tools/a3-ananyasingh8❯ cd task1
+~/units/02-tools/a3-ananyasingh8/task1❯ mv other.h ../
+~/units/02-tools/a3-ananyasingh8/task1❯ mv other.o ../
+~/units/02-tools/a3-ananyasingh8/task1❯ ls
+main.c  main.o
+~/units/02-tools/a3-ananyasingh8/task1❯ cd ..
+~/units/02-tools/a3-ananyasingh8❯ ls
+a3-checker.amd64  a3-checker.arm64  a.out  hello  main  main.c  main.o  other.c  other.h  other.o  README.md  task1  test  test.c
+~/units/02-tools/a3-ananyasingh8❯ cd a3-ananyasingh8/task1
+cd: no such file or directory: a3-ananyasingh8/task1
+~/units/02-tools/a3-ananyasingh8❯ ./a3-checker.arm64
+Checker completed. Make sure to check all error messages. No additional output indicates all basic checks have passed.
+~/units/02-tools/a3-ananyasingh8❯ git add .
+~/units/02-tools/a3-ananyasingh8❯ git commit -m "A3 completed"
+[main 1b2c4ad] A3 completed
+ 48 files changed, 4198 insertions(+), 2 deletions(-)
+ create mode 100644 .nvim/main.c.2025-09-19T01:56:17-07:00.hash
+ create mode 100644 .nvim/main.c.2025-09-19T01:56:17-07:00.nvim
+ create mode 100644 .nvim/main.c.2025-09-19T01:56:18-07:00.hash
+ create mode 100644 .nvim/main.c.2025-09-19T01:56:18-07:00.nvim
+ create mode 100644 .nvim/main.c.2025-09-19T01:57:39-07:00.hash
+ create mode 100644 .nvim/main.c.2025-09-19T01:57:39-07:00.nvim
+ create mode 100644 .nvim/main.c.2025-09-19T02:01:06-07:00.hash
+ create mode 100644 .nvim/main.c.2025-09-19T02:01:06-07:00.nvim
+ create mode 100644 .nvim/main.c.2025-09-19T02:01:35-07:00.hash
+ create mode 100644 .nvim/main.c.2025-09-19T02:01:35-07:00.nvim
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.0.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.0.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.1087.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.1087.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.12702.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.12702.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.131213.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.131213.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.16670.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.16670.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.2100.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.2100.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.262400.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.262400.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.32975.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.32975.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.4146.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.4146.snapshot
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.65688.hash
+ create mode 100644 .record/input.0.2025-09-19T01:55:22.540903.65688.snapshot
+ create mode 100644 hello/.nvim/hello.c.2025-09-19T01:57:48-07:00.hash
+ create mode 100644 hello/.nvim/hello.c.2025-09-19T01:57:48-07:00.nvim
+ create mode 100644 hello/.nvim/hello.c.2025-09-19T02:00:24-07:00.hash
+ create mode 100644 hello/.nvim/hello.c.2025-09-19T02:00:24-07:00.nvim
+ create mode 100644 hello/.nvim/hello.h.2025-09-19T01:58:04-07:00.hash
+ create mode 100644 hello/.nvim/hello.h.2025-09-19T01:58:04-07:00.nvim
+ create mode 100644 hello/.nvim/hello.h.2025-09-19T01:59:34-07:00.hash
+ create mode 100644 hello/.nvim/hello.h.2025-09-19T01:59:34-07:00.nvim
+ create mode 100644 hello/hello.c
+ create mode 100644 hello/hello.h
+ create mode 100644 hello/hello.o
+ create mode 100644 hello/libhello.a
+ create mode 100755 hello/libhello.so
+ create mode 100755 main
+ create mode 100644 task1/main.c
+ create mode 100644 task1/main.o
+~/units/02-tools/a3-ananyasingh8❯ git push
+Enumerating objects: 46, done.
+Counting objects: 100% (46/46), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (41/41), done.
+Writing objects: 100% (42/42), 58.29 KiB | 3.43 MiB/s, done.
+Total 42 (delta 12), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (12/12), completed with 3 local objects.
+To github.com:SFU-CMPT-201/a3-ananyasingh8.git
+   2cd7f25..1b2c4ad  main -> main
+~/units/02-tools/a3-ananyasingh8❯ cd ..           ~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ INSERT  lab2.c | +                                                                            W: 1  unix | utf-8 | c   69%    9:37
+incompatible pointer types passing 'ssize_t **' (aka 'long...t *' (aka 'unsigned long *') [-Wincompatible-pointer-types]
+ lab2.c +
+    1 #define _POSIX_C_SOURCE 200809L
+    2 #include <stdio.h>
+    3 #include <stdlib.h>
+    4 #include <string.h>
+    5
+    6 int main() {
+    7 ┆ char *user_input = NULL;
+    8 ┆ ssize_t *len = 0;
+W   9 ┆ getline(&user_input, &len, stdin);     ■ i
+   10 ┆ printf("%s", user_input);
+   11 ┆
+   12 ┆ free(user_input);
+   13 }
+<lab2.c | +  W: 1  unix | utf-8 | c   69%    9:37
+ lab2.c +
+    1 #define _POSIX_C_SOURCE 200809L
+    2 #include <stdio.h>
+    3 #include <stdlib.h>
+    4 #include <string.h>
+    5
+    6 int main() {
+    7 ┆ char *user_input = NULL;
+    8 ┆ ssize_t *len = 0;
+W   9 ┆ getline(&user_input, &len, stdin);     ■ incompatible pointer types passing 'ssize_t **' (aka
+   10 ┆ printf("%s", user_input);
+   11 ┆
+   12 ┆ free(user_input);
+   13 }
+ INSERT  lab2.c | +                                             W: 1  unix | utf-8 | c   69%    9:37
+
+ lab2.c +
+    1 #define _POSIX_C_SOURCE 200809L
+    2 #include <stdio.h>
+    3 #include <stdlib.h>
+    4 #include <string.h>
+    5
+    6 int main() {
+    7 ┆ char *user_input = NULL;
+    8 ┆ ssize_t *len = 0;
+W   9 ┆ getline(&user_input, &len, stdin);     ■ incompatible pointer types passing 'ssize_t **' (aka 'long **') to parameter of typ
+   10 ┆ printf("%s", user_input);
+   11 ┆
+   12 ┆ free(user_input);
+   13 }
+ INSERT  lab2.c | +                                                                            W: 1  unix | utf-8 | c   69%    9:37
+ lab2.c +
+    1 #define _POSIX_C_SOURCE 200809L
+    2 #include <stdio.h>
+    3 #include <stdlib.h>
+    4 #include <string.h>
+    5 #include <unistd.h>
+    6
+    7 int main() {
+    8 ┆ // getting user input
+    9 ┆ char *user_input = NULL;
+   10 ┆ size_t len = 0;
+   11 ┆ getline(&user_input, &len, stdin);
+   12 ┆ user_input[strlen(user_input)-1] = '\0';
+   13 ┆
+E  14 ┆ while(1){     ■■ expected expression
+   15 ┆ ┆ printf("Enter programs to run, \n");
+   16 ┆ ┆ getline(&user_input, &len, stdin);
+   17 ┆ user_input[strlen(user_input)-1] = '\0';
+   18 ┆ execl(user_input, token, );
+   19 ┆
+   20 ┆ free(user_input);
+   21 }
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ INSERT  lab2.c | +                                                                            E: 2  unix | utf-8 | c   80%   17:3
+use of undeclared identifier 'token'
