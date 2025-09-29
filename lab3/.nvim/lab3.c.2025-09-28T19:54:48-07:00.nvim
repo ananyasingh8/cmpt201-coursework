@@ -1,0 +1,46 @@
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *get_input() {
+  char *input = NULL;
+  size_t len;
+  printf("Enter input: ");
+  getline(&input, &len, stdin);
+
+  return input;
+}
+
+void print_all(char *array[], int len) {
+  for (int i = 0; i < len; i++) {
+    printf("%s", array[i]);
+  }
+}
+
+int main() {
+  char *array[5];
+  int count = 0;
+
+  while (1) {
+    char *input = get_input();
+
+    if (count == 5) {
+      free(array[0]);
+      for (int i = 0; i < 4; i++) {
+        array[i] = array[i + 1];
+      }
+      array[4] = input;
+if (strcmp(input, "print\n") == 0) {
+        print_all(array, count);
+      }
+    } else {
+      array[count] = input;
+      count++;
+      if (strcmp(input, "print\n") == 0) {
+        print_all(array, count);
+      }
+    }
+  }
+  return 0;
+};
