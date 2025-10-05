@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 
 struct header {
@@ -50,37 +49,21 @@ void print_out(char *format, void *data, size_t data_size) {
 
 int main() {
   void *heap_start = increase_heap_size(256);
-
   struct header *first_block = initialize_block(heap_start, 128, NULL, 0);
   struct header *second_block =
       initialize_block((char *)heap_start + 128, 128, first_block, 1);
 
   print_out("first block:       %p\n", (void *)&first_block,
             sizeof(first_block));
-  print_out("second block:      %p\n", (void *)&second_block,
+  print_out("second block:       %p\n", (void *)&second_block,
             sizeof(second_block));
 
-  print_out("first block size:  %lu\n", &(first_block->size),
+  print_out("first block size:      %lu\n", &(first_block->size),
             sizeof(first_block->size));
-  print_out("first block next:  %p\n", (void *)&(first_block->next),
+  print_out("first block next:      %p\n", (void *)&(first_block->next),
             sizeof(first_block->next));
 
-  print_out("second block size: %lu\n", &(second_block->size),
+  print_out("second block size:      %lu\n", &(second_block->size),
             sizeof(second_block->size));
-  print_out("second block next: %p\n", (void *)&(second_block->next),
-            sizeof(second_block->next));
-
-  char *first_data = (char *)first_block + sizeof(struct header);
-  size_t first_data_size = first_block->size - sizeof(struct header);
-  for (size_t i = 0; i < first_data_size; i++) {
-    uint64_t byte_value = (uint64_t)first_data[i];
-    print_out("%lu\n", &byte_value, sizeof(uint64_t));
-  }
-
-  char *second_data = (char *)second_block + sizeof(struct header);
-  size_t second_data_size = second_block->size - sizeof(struct header);
-  for (size_t i = 0; i < second_data_size; i++) {
-    uint64_t byte_value = (uint64_t)second_data[i];
-    print_out("%lu\n", &byte_value, sizeof(uint64_t));
-  }
-}
+  print_out("second block next:      %p\n", (void *)&(second_block->next),
+            sizeof(second_block->next));}
